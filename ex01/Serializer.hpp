@@ -2,7 +2,8 @@
 #define SERIALIZER_HPP
 
 #include "Data.hpp"
-#include <cstdint>
+// #include <cstdint> // not work new for c++98
+#include <stdint.h>
 
 class Serializer {
     Serializer();
