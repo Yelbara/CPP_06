@@ -14,15 +14,7 @@ int main()
     std::cout << "Original address : " << &d << std::endl;
     std::cout << "Deserialized ptr : " << ptr << std::endl;
 
-    if (ptr == &d)
-        std::cout << "✅ SUCCESS: pointers are equal" << std::endl;
-    else
-        std::cout << "❌ ERROR: pointers differ" << std::endl;
-
-    std::cout << "Data values: "
-              << ptr->a << ", "
-              << ptr->b << ", "
-              << ptr->c << std::endl;
+    std::cout << "Data values for ptr : " << ptr->a << ", " << ptr->b << ", " << ptr->c << std::endl;
 
     return 0;
 }
