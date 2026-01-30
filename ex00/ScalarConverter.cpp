@@ -67,9 +67,9 @@ int print_float(std::string str)
     double nb = strtod(str.c_str(), &endptr);
     if(errno == ERANGE )
         return(std::cout << "impossible" << std::endl, -1);
-    if(std::isnan(nb))
+    if(std::isnan(nb) && endptr[0] == '\0')
         return(std::cout << "nanf" << std::endl, 0);
-    if(std::isinf(nb))
+    if(std::isinf(nb) && endptr[0] == '\0')
     {
         if(nb > 0)
             return(std::cout << "+inff" << std::endl, 0);
@@ -91,9 +91,9 @@ int print_double(std::string str)
     double nb = strtod(str.c_str(), &endptr);
     if(errno == ERANGE )
         return(std::cout << "impossible" << std::endl, -1);
-    if(std::isnan(nb))
+    if(std::isnan(nb) && endptr[0] == '\0')
         return(std::cout << "nan" << std::endl, 0);
-    if(std::isinf(nb))
+    if(std::isinf(nb) && endptr[0] == '\0')
     {
         if(nb > 0)
             return(std::cout << "+inf" << std::endl, 0);
@@ -111,8 +111,8 @@ int print_double(std::string str)
 
 void ScalarConverter::convert(std::string str)
 {
-        print_char(str);
-        print_int(str);
-        print_float(str);
-        print_double(str);
+    print_char(str);
+    print_int(str);
+    print_float(str);
+    print_double(str);
 }
